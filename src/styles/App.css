@@ -372,3 +372,20 @@ body{
 .lr:hover{
   color: lightgray;
 }
+
+.none{
+  display: none;
+}
+
+.block{
+  display: block;
+  color: whitesmoke;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.block:hover{
+  color: lightgray;
+}

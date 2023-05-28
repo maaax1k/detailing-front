@@ -1,43 +1,48 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import CusButton from "../UI/button/CusButton";
 import PostItem from "../components/PostItem";
-import {type} from "@testing-library/user-event/dist/type";
-import * as events from "events";
 
 const FeedbackPage = () => {
     const [posts, setPosts] = useState([
         {id: 1, name : "Максим", mark: 4, comment: "Хороший детейлинг"},
         {id: 2, name : "Карим", mark: 5, comment: "Отличная работа"},
-        {id: 3, name : "Ренат", mark: 1, comment: "Сервис отвратительный"}])
+        {id: 3, name : "Кизару", mark: 5, comment: "Хорошая работа, Олег"},
+        {id: 4, name : "Ренат", mark: 1, comment: "Сервис отвратительный"}])
 
     const [post, setPost] = useState({
         name: '',
         mark: 5,
-        comment:''
     })
+
+    const refInput = useRef('')
+
 
     const [filtPosts, setFiltPosts] = useState(posts)
 
 
+
     const addNew = () =>{
-        if (post.name === '' || post.comment === ''){
+        const comment = refInput.current.value
+        if (post.name === '' || comment === ''){
             alert("Вы ввели не все данные")
+            console.log(comment)
         }
         else {
-            setPosts([...posts, {...post, id: Date.now()}])
+            setPosts([...posts, {...post, id: Date.now(), comment: comment}])
             if(selFilt === 'bad' && post.mark < 3)
             {
-                setFiltPosts([...filtPosts, {...post, id: Date.now()}])
+                setFiltPosts([...filtPosts, {...post, id: Date.now(), comment: comment}])
             }
             else if(selFilt === 'good' && post.mark >= 3)
             {
-                setFiltPosts([...filtPosts, {...post, id: Date.now()}])
+                setFiltPosts([...filtPosts, {...post, id: Date.now(), comment: comment}])
             }
             else if (selFilt === 'all') {
                 console.log("dasdksad")
-                setFiltPosts([...filtPosts, {...post, id: Date.now()}])
+                setFiltPosts([...filtPosts, {...post, id: Date.now(), comment: comment}])
             }
-            setPost({name: '', mark: 5, comment: ''})
+            setPost({name: '', mark: 5})
+            refInput.current.value = '';
         }
     }
 
@@ -88,7 +93,7 @@ const FeedbackPage = () => {
                         <input id="mark" type="number" min="1" max="5" placeholder="1-5" value={post.mark} onChange={event => setPost({...post, mark: event.target.value})}/>
                     </span>
                 </div>
-                <textarea id="comment" placeholder="Комментарий" value={post.comment} onChange={event => setPost({...post, comment: event.target.value})}/>
+                <textarea id="comment" placeholder="Комментарий" ref={refInput}/>
                 <CusButton onClick={addNew}>Опубликовать</CusButton>
             </div>
             <select  onChange={event => filter(event.target.value)} className="filter">

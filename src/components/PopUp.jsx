@@ -4,6 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import 'bootstrap/dist/css/bootstrap.css';
 
 const PopUp = (props) => {
+
     const [show, setShow] = useState(false);
     const Close = () => setShow(false);
     const Open = () => {
