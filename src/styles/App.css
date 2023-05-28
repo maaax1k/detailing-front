@@ -223,7 +223,6 @@ body{
   width: 60%;
   padding: 40px 30px;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
 }
 
 .title{
@@ -232,4 +231,144 @@ body{
 
 .modal-content{
   background-color: #2f2f2f !important;
+}
+
+.comment-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  margin: 120px auto 50px auto;
+  background-color: #1f1f1f;
+  padding: 40px 30px;
+  border-radius: 20px;
+}
+
+.comment-input{
+  display: flex;
+  flex-direction: column;
+}
+
+.comments{
+  width: 60%;
+  margin: auto;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.inputs input{
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+}
+
+.comment-form textarea{
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 10px;
+  margin: 10px 0 5px 0;
+}
+
+.post{
+  width: 70%;
+  margin: 0px auto 50px auto;
+  background-color: #1f1f1f;
+  padding: 20px 30px 40px 30px;
+  border-radius: 20px;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment{
+  color: #2f2f2f;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.close-button{
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  align-self: end;
+  font-size: 20px;
+}
+
+.filter{
+  width: 70%;
+  height: 40px;
+  margin: 0 15% 50px 15%;
+  color: whitesmoke;
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  padding: 5px 30px;
+  border: none;
+}
+
+.main-image{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10%;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../../detailing-front/src/image/background.jpg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-top: -80px;
+}
+
+.main-image h1{
+  font-size: 80px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.main-image p{
+  font-size: 30px;
+}
+
+.mainContent{
+  width: 60%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainInfo{
+  width: 50%;
+}
+
+.attr{
+  margin: 30px 0;
+  text-transform: uppercase;
+}
+
+.attr span{
+  color: mediumslateblue;
+  margin-right: 10px;
+}
+
+.plate{
+  padding: 40px 20%;
+  background-color: #1f1f1f;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lr:hover{
+  color: lightgray;
 }

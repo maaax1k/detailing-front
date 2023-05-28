@@ -6,7 +6,17 @@ import 'bootstrap/dist/css/bootstrap.css';
 const PopUp = (props) => {
     const [show, setShow] = useState(false);
     const Close = () => setShow(false);
-    const Open = () => setShow(true);
+    const Open = () => {
+        if(props.data[0] === ''){
+            alert("Введите имя")
+        }
+        else if(props.data[1] === ''){
+            alert("Введите телефон")
+        }
+        else{
+            setShow(true);
+        }
+    }
     const CloseReload = () =>{
         window.location.reload()
     }
