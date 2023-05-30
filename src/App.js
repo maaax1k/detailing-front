@@ -1,9 +1,9 @@
 import React from 'react';
 import './styles/App.css'
-import Header from "../../detailing-front/src/components/Header";
 import {BrowserRouter} from "react-router-dom";
-import AppRouter from "../../detailing-front/src/components/AppRouter";
-import Footer from "../../detailing-front/src/components/Footer";
+import Header from "./components/Header";
+import AppRouter from "./components/AppRouter";
+import Footer from "./components/Footer";
 
 function App() {
   return (
